@@ -87,5 +87,15 @@ inp.addEventListener("input",function(){
     })
     
      document.querySelector(".cards").innerHTML = "";
-  showUsers(newUsers);
+  
+
+  if (newUsers.length === 0 ) {
+   let card = document.querySelector(".cards")
+    card.textContent = "User not found";
+    card.style.color = "white"
+    
+  }else{
+
+    showUsers(newUsers);
+  }
 })
