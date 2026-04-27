@@ -204,7 +204,7 @@ upBtn.addEventListener("click",()=>{
 downBtn.addEventListener("click",()=>{
   let firstChild = stack.firstElementChild
   if (firstChild) {
-    stack.insertBefore(firstChild,stack.lastElementChild)
+    stack.appendChild(firstChild,stack.lastElementChild)
     updateStack()
   }
 })
