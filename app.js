@@ -1,20 +1,22 @@
-// *Oops topic 
+// *Oops topic
+// ^ classes 
 
-function CreatePencil(name,price,color){
-    this.name = name;
-    this.price = price;
-    this.color =color
-    
-}
+class CreatePencil{
+    constructor(name,company,price,color){
+        this.name = name
+        this.company= company
+        this.price = price
+        this.color = color
+    }
 
-CreatePencil.prototype.write = function(text){
+    write(text){
         let h1 = document.createElement("h1")
         h1.textContent = text
         h1.style.color = this.color
-        document.querySelector("body").appendChild(h1)
+        document.body.appendChild(h1)
     }
+}
 
-let pencil1 = new CreatePencil("apsara",10,"red")
-let pencil2 = new CreatePencil("nutraj",10,"black")
-pencil1.write("kya hua bhaiyya ")
-pencil2.write("hn meri jaaan ")
+
+let p1 = new CreatePencil("natraj","natraj",10,"red")
+let p2 = new CreatePencil("natraj","natraj",10,"black")
