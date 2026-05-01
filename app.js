@@ -1,35 +1,33 @@
-// *iffe
+// *factory function pattern
 
-let Bank = (function (){
-    let balance = 1000
+function factory(name,price){
 
-    function checkBalance(){
-        console.log(`yor current balance is ${balance}`);
-        
-    }
-
-    function setBalance(val){
-        balance+= val
-        console.log(`yor current balance is ${balance}`);
-        
-    }
-
-    function withdrawl(val){
-        if (val <= balance) {
-            balance-= val
-            console.log(`yor current balance is ${balance}`);
+    let stock = 10
+    return{
+        name,
+        price,
+        checkStock(){
+            console.log(`${stock} is avalaible`);
+            
+        },
+        buy(qty){
+            if (qty<=stock) {
+                stock -= qty
+                console.log(`${qty} you booked now we have ${stock} left`);
+                
+            } else {
+                console.error(`we have only ${stock} stock right now`);
+                
+            }
+        },
+        refill(qyt){
+            stock+= qyt
+            console.log(`now we have total ${stock} stock`);
             
         }
     }
+}
 
-    return{
-        checkBalance,
-        setBalance,
-        withdrawl
-    }
-   
-})();
 
-Bank.checkBalance();
-Bank.setBalance(200)
-Bank.withdrawl(100)
+let iphone = factory("iphone17",40000)
+let fenta = factory("fenta",20)
