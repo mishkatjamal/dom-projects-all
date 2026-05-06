@@ -3,19 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>snake game</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-      <div class="bg-white w-full h-[100vh]">
+    <main>
+        <section>
+            <div class="infos">
+                <div>
+                    <h3>Score:<span id="score">0</span></h3>
+                </div>
+                <div>
+                    <h3>High-Score:<span id="high-score">
+                        0
+                    </span></h3>
+                </div>
+                <div >
+                    <h3>Time:<span id="time">00-00</span></h3>
+                </div>
+            </div>
+            <div class="board">
+            </div>
+        </section>
+        <div class="modal">
+            <div class="start-game">
+                <h3>welcome to snake game</h3>
+                <button class="btn start-btn">start game</button>
+            </div>
+            <div class="restart-game">
+                <h3>Game over</h3>
+                <button class="btn restart-btn">restart game</button>
+            </div>
+        </div>
+    </main>
 
-    </div>
-    <img class="opa" data-src="https://images.unsplash.com/photo-1776921542313-f4121d356d0f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw3fHx8ZW58MHx8fHx8" alt="">
-    <div class="bg-white w-full h-[100vh]">
-
-    </div>
-    <img class="opa" data-src="https://images.unsplash.com/photo-1776921542313-f4121d356d0f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw3fHx8ZW58MHx8fHx8" alt="">
 
     <script src="app.js"></script>
 </body>

@@ -1,17 +1,155 @@
-*{
-    margin: 0;padding: 0;
+* {
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
-body,html{
+
+html,
+body {
     width: 100%;
     height: 100%;
 }
-.opa{
-    opacity: 0;
+
+:root {
+    /*^ bg color */
+    --bg-primary:#1a1a1a;
+    --bg-food:#a40000;
+
+
+    /*^ colors */
+    --color-primary:#f7f7f7;
+    --color-secondary:#646464;
+
+
+
+    /* =========================
+     SPACING (4px scale)
+  ========================== */
+    --spacing-2xs: 0.25rem;
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 0.75rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+
+
+
+    /* =========================
+     FONT SIZE
+  ========================== */
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-md: 1rem;
+    --text-lg: 1.25rem;
+    --text-xl: 1.5rem;
+    --text-2xl: 2rem;
+
+
+
+    /* =========================
+     BORDER RADIUS
+  ========================== */
+    --radius-xs: 4px;
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-2xl: 32px;
+
+
+    /* =========================
+     FONT WEIGHT
+  ========================== */
+    --fw-light: 300;
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+
+}
+
+/*! main div */
+main{
     height: 100%;
     width: 100%;
-    object-fit: cover;
+    padding: var(--spacing-2xl);
+    background-color: var(--bg-primary);
+    color: var(--color-primary);
 }
-.loaded{
-    opacity: 1;
+
+/*! section div */
+section{
+width: 100%;
+height: 100%;
+display: flex;
+flex-direction: column;
+gap: var(--spacing-md);
+
+}
+/*! infos div */
+.infos{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* ! infos inner div */
+.infos div{
+    border:1px solid var(--color-primary) ;
+    padding: var(--spacing-xs) var(--spacing-md);
+}
+
+/*! board */
+.board{
+    
+    border:1px solid var(--color-primary) ;
+    display: grid;
+    flex-grow: 1;
+    grid-template-columns: repeat(auto-fill,minmax(50px,1fr));
+    grid-template-rows: repeat(auto-fill,minmax(50px,1fr));
+    flex-wrap: wrap;
+}
+.block{
+   
+     border:1px solid var(--color-secondary) ;
+     border-radius: 50%;
+}
+.fill{
+    background-color: var(--color-primary);
+}
+
+/* ! food */
+.food{
+    background-color: var(--bg-food);
+}
+
+.modal{
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #6464644f;
+    backdrop-filter: blur(4px);
+    display: flex;
+}
+.start-game,.restart-game{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.restart-game{
+    display: none;
+}
+.btn{
+    padding: var(--spacing-md) var(--spacing-2xl);
+    border-radius: var(--spacing-sm);
+    transition: ease all 0.3s;
+  
+}
+.btn:hover{
+    transform: scale(1.1);
 }
